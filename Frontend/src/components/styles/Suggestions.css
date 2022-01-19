@@ -11,6 +11,7 @@
 .see_all_btn{
     border: none;
     background-color: #fafafa;
+    cursor: pointer;
 }
 
 .few_suggestions{
@@ -26,4 +27,5 @@
     border: none;
     background-color: #fafafa;
     color: aqua;
+    cursor: pointer;
 }

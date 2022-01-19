@@ -5,7 +5,7 @@ import SwitchAC from "./components/SwitchAC";
 import Navbar from "./components/Navbar";
 import Post from "./components/posts/Post";
 import Suggestions from "./components/Suggestions";
-
+import Comments from "./components/comments/Comments";
 import SeeAll from "./components/SeeAll";
 
 const App = () => {
@@ -16,12 +16,7 @@ const App = () => {
       avatarURL: "https://i.ibb.co/gP41JMd/Screenshot-2021-0622-215115.jpg",
       comment: "I like it",
     },
-    {
-      userName: "Avinash",
-      postURL: "https://i.ibb.co/981hrmV/quotes01.png",
-      avatarURL: "https://i.ibb.co/gP41JMd/Screenshot-2021-0622-215115.jpg",
-      comment: "I like it",
-    },
+   
   ]);
 
   return (
@@ -40,6 +35,7 @@ const App = () => {
               />
             );
           })}
+      
         </div>
         <div className="ac_follow_side">
           <SwitchAC
@@ -68,8 +64,10 @@ const App = () => {
             userName="avi.nash7602"
             avatarURL="https://i.ibb.co/gP41JMd/Screenshot-2021-0622-215115.jpg"
           />
+         
         </div>
       </div>
+     
     </div>
   );
 };
