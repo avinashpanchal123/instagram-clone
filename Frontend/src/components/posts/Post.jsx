@@ -4,7 +4,7 @@ import { Avatar } from "@mui/material";
 
 import "../styles/Post.css";
 
-function Post() {
+function Post({userName,avatarURL,postURL,comment}) {
     const user = "Avinash"
   return (
     <>
@@ -14,17 +14,17 @@ function Post() {
             <div className="avatar">
               <Avatar
                 alt="Remy Sharp"
-                src="https://i.ibb.co/gP41JMd/Screenshot-2021-0622-215115.jpg"
+                src={avatarURL}
               />
             </div>
             <div>
-              <h3>{user}</h3>
+              <h3>{userName}</h3>
             </div>
           </div>
           <div className="post_div">
             <img
               className="post_img"
-              src="https://i.ibb.co/981hrmV/quotes01.png"
+              src={postURL}
               alt="post1"
             />
           </div>
@@ -99,7 +99,7 @@ function Post() {
 
             <div className="post_comments">
                 <h4 className="comment_text">
-                   <strong> {user} </strong> I like it</h4>
+                   <strong> {userName} </strong> {comment}</h4>
             </div>
            <div className="comment_div">
            <div className="input_comment_div">

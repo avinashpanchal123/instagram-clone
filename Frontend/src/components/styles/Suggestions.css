@@ -1,0 +1,29 @@
+.suggestions{
+    /* border: 1px solid black; */
+    padding-left: 7%;
+    margin-bottom: 2vh;
+}
+.suggestion_user_avatar{
+    width: 1rem;
+    margin-right: 0.5rem;
+}
+
+.see_all_btn{
+    border: none;
+    background-color: #fafafa;
+}
+
+.few_suggestions{
+    display: flex;
+    align-items: center;
+    position: relative;
+    
+}
+
+.follow_btn{
+    position: absolute;
+    right: 0;
+    border: none;
+    background-color: #fafafa;
+    color: aqua;
+}
