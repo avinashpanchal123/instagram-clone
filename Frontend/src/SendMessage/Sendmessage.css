@@ -1,0 +1,26 @@
+
+
+.messageBox{
+    max-width: 35%;
+    padding: 1vmax;
+    margin: 1vmax;
+    border: 1px solid #DBDBDB;
+    border-radius: 2vmax;
+    display: inline-block;
+    clear: both;
+    overflow: hidden;
+}
+
+.right{
+    float: right ;
+    background-color:#DBDBDB
+    
+}
+
+.left{
+    float: left;
+    background-color: white;
+}
+.img{
+    padding-left: 20px;
+}
