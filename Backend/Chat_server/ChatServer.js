@@ -7,7 +7,9 @@ const { Socket } = require("engine.io")
 const app = express()
 const port = 4500 || process.env.PORT
 
-
+app.get("/",(req,res)=>{
+    res.send("yupp is is working ")
+})
 const server = http.createServer(app)
 
 const io = socketIO(server)
