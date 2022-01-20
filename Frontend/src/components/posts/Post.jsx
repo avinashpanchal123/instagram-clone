@@ -26,7 +26,8 @@ function Post({ userName, avatarURL, postURL, comment }) {
           <div className="caption_icons">
             <div>
               <svg
-                ariaLabel="Like"
+                aria-label="Like"
+                class="_8-yf5 "
                 color="#262626"
                 fill="#262626"
                 height="24"
@@ -39,7 +40,8 @@ function Post({ userName, avatarURL, postURL, comment }) {
             </div>
             <div>
               <svg
-                ariaLabel="Comment"
+                aria-label="Comment"
+                class="_8-yf5 "
                 color="#262626"
                 fill="#262626"
                 height="24"
@@ -51,14 +53,15 @@ function Post({ userName, avatarURL, postURL, comment }) {
                   d="M20.656 17.008a9.993 9.993 0 10-3.59 3.615L22 22z"
                   fill="none"
                   stroke="currentColor"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
+                  stroke-linejoin="round"
+                  stroke-width="2"
                 ></path>
               </svg>
             </div>
             <div>
               <svg
-                ariaLabel="Share Post"
+                aria-label="Share Post"
+                class="_8-yf5 "
                 color="#262626"
                 fill="#262626"
                 height="24"
@@ -69,8 +72,8 @@ function Post({ userName, avatarURL, postURL, comment }) {
                 <line
                   fill="none"
                   stroke="currentColor"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
+                  stroke-linejoin="round"
+                  stroke-width="2"
                   x1="22"
                   x2="9.218"
                   y1="3"
@@ -80,8 +83,8 @@ function Post({ userName, avatarURL, postURL, comment }) {
                   fill="none"
                   points="11.698 20.334 22 3.001 2 3.001 9.218 10.084 11.698 20.334"
                   stroke="currentColor"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
+                  stroke-linejoin="round"
+                  stroke-width="2"
                 ></polygon>
               </svg>
             </div>
