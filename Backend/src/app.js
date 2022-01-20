@@ -8,6 +8,11 @@ const {register,login} = require ("./controllers/user.controller");
 app.use("/signup", register);
 app.use("/login", login);
 
+app.use((req, res, next) => {
+    res.header({"Access-Control-Allow-Origin": "*"});
+    next();
+ }) 
+
 const postController = require("./controllers/post.controller");
 
 app.use("/post", postController);

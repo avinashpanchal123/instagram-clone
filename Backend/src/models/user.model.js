@@ -6,7 +6,27 @@ const userSchema = new Schema({
     full_name: { type: String, required: true },
     username: { type: String, required: true },
     password: { type: String , required: true },
-    profile_picture: { type: String, required: false}
+    profile_picture: { type: String, required: false},
+    about: { type: String, required: false},
+    follower:[ {
+      type: Schema.Types.ObjectId,
+      ref: "users",
+      required:false
+    }],
+    following: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "users",
+        required: false
+      }
+    ],
+    post: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "posts",
+        required: false
+      }
+    ]
 
 },{
     versionKey:false,

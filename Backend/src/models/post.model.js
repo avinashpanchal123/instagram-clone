@@ -2,7 +2,8 @@ const {Schema, model} = require("mongoose");
 
 
 const postSchema = new Schema({
-    picture: { type: String, required: true},
+    picture: { type: String, required: false},
+    video: { type: String, required: false},
     caption:{ type: String, required: false},
     user:{
         type: Schema.Types.ObjectId,

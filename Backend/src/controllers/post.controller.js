@@ -2,7 +2,18 @@ const express = require("express");
 
 const router = express.Router();
 
+
 const Post = require ("../models/post.model");
+
+router.get("/", async (req,res)=>{
+    try{
+        const posts = await Post.find().populate("comments").lean().exec();
+        return res.send(posts);
+
+    }catch(e){
+        return res.status(400).json({ status: "failed", message: e.message });
+    }
+})
 
 router.post("/", async (req,res)=>{
     try{
