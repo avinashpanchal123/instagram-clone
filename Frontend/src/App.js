@@ -8,6 +8,7 @@ import Suggestions from "./components/Suggestions";
 import Comments from "./components/comments/Comments";
 import SeeAll from "./components/SeeAll";
 
+
 const App = () => {
   const [posts, setPost] = useState([
     {
@@ -35,6 +36,7 @@ const App = () => {
               />
             );
           })}
+         
       
         </div>
         <div className="ac_follow_side">

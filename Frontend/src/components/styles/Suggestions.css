@@ -1,31 +1,69 @@
-.suggestions{
-    /* border: 1px solid black; */
-    padding-left: 7%;
-    margin-bottom: 2vh;
+.suggestions {
+  /* border: 1px solid black; */
+  padding-left: 7%;
+  margin-bottom: 2vh;
 }
-.suggestion_user_avatar{
-    width: 1rem;
-    margin-right: 0.5rem;
+.suggestion_user_avatar {
+  width: 1rem;
+  margin-right: 0.5rem;
 }
 
-.see_all_btn{
+.see_all_btn {
+  border: none;
+  background-color: #fafafa;
+  cursor: pointer;
+}
+
+.few_suggestions {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.follow_btn {
+  position: absolute;
+  right: 0;
+  border: none;
+  background-color: #fafafa;
+  color: aqua;
+  cursor: pointer;
+}
+
+.unfollow_avatar{
+    margin: auto;
+    margin-bottom: 8vh;
+    margin-top: 3vh;
+}
+.modalPara{
+    text-align: center;
+    margin-bottom: 4vh;
+}
+
+
+
+.unfollow_btn{
+    background-color: white;
+    width: 100%;
     border: none;
-    background-color: #fafafa;
     cursor: pointer;
+    font-size: 1rem;
+    height: 7vh;
+    font-weight: 600;
+    color: hotpink;
 }
 
-.few_suggestions{
-    display: flex;
-    align-items: center;
-    position: relative;
-    
-}
 
-.follow_btn{
-    position: absolute;
-    right: 0;
+.cancle_btn{
+    background-color: white;
+    width: 100%;
     border: none;
-    background-color: #fafafa;
-    color: aqua;
     cursor: pointer;
+    font-size: 1rem;
+    height: 7vh;
+    font-weight: 500;
 }
+
+/* .unfollowModal{
+    width: 30%;
+    height: 40vh;
+} */

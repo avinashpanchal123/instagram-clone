@@ -6,7 +6,7 @@ function SwitchAC({userName,name,avatarURL}) {
   return (
     <>
       <div className="switch_user_div">
-        <Avatar style={{width: "3.4rem", height:"9vh"}}
+        <Avatar style={{ width: "4rem", height: "9vh" }}
           className="user_avatar"
           alt="Remy Sharp"
           src={avatarURL}
