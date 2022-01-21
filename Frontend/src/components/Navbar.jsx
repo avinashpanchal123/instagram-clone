@@ -167,7 +167,12 @@ function Navbar() {
               </svg>
             </div>
             <div>
-              <Avatar className="nav_avatar" alt="Remy Sharp" src="https://i.ibb.co/gP41JMd/Screenshot-2021-0622-215115.jpg" />
+              <Avatar
+              style={{ width: "1.7rem", height: "4vh" }}
+                className="nav_avatar"
+                alt="Remy Sharp"
+                src="https://i.ibb.co/gP41JMd/Screenshot-2021-0622-215115.jpg"
+              />
             </div>
           </div>
         </div>
