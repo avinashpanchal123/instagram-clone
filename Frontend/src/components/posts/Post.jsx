@@ -1,32 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Avatar } from "@mui/material";
 
 import "../styles/Post.css";
+import Comments from "../comments/Comments";
 
-function Post() {
-    const user = "Avinash"
+function Post({ userName, avatarURL, postURL, comment }) {
+ 
   return (
     <>
       <div>
         <div className="post">
           <div className="post_header">
             <div className="avatar">
-              <Avatar
-                alt="Remy Sharp"
-                src="https://i.ibb.co/gP41JMd/Screenshot-2021-0622-215115.jpg"
-              />
+              <Avatar alt="Remy Sharp" src={avatarURL} />
             </div>
             <div>
-              <h3>{user}</h3>
+              <h3>{userName}</h3>
             </div>
           </div>
           <div className="post_div">
-            <img
-              className="post_img"
-              src="https://i.ibb.co/981hrmV/quotes01.png"
-              alt="post1"
-            />
+            <img className="post_img" src={postURL} alt="post1" />
           </div>
           {/* captio icons started */}
           <div className="caption_icons">
@@ -95,18 +89,11 @@ function Post() {
               </svg>
             </div>
           </div>
-            {/* captio icons ended */}
+          {/* captio icons ended */}
 
-            <div className="post_comments">
-                <h4 className="comment_text">
-                   <strong> {user} </strong> I like it</h4>
-            </div>
-           <div className="comment_div">
-           <div className="input_comment_div">
-                <input className="input_comment" type="text" />
-            </div>
-            <button className="post_btn">Post</button>
-           </div>
+          
+        
+          <Comments name={userName}/>
         </div>
       </div>
     </>
