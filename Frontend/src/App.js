@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "./App.css";
 import SwitchAC from "./components/SwitchAC";
@@ -10,15 +10,28 @@ import SeeAll from "./components/SeeAll";
 
 
 const App = () => {
-  const [posts, setPost] = useState([
-    {
-      userName: "Avinash",
-      postURL: "https://i.ibb.co/981hrmV/quotes01.png",
-      avatarURL: "https://i.ibb.co/gP41JMd/Screenshot-2021-0622-215115.jpg",
-      comment: "I like it",
-    },
+
+  // const [posts, setPost] = useState([
+  //   {
+  //     userName: "Avinash",
+  //     postURL: "https://i.ibb.co/981hrmV/quotes01.png",
+  //     avatarURL: "https://i.ibb.co/gP41JMd/Screenshot-2021-0622-215115.jpg",
+  //     comment: "I like it",
+  //   },
    
-  ]);
+  // ]);
+
+  const[post,setPost] = useState([]);
+
+  useEffect(()=>{
+    fetch("http://localhost:2345/post")
+    .then(res=> res.json())
+    .then(data=>{
+      setPost(data);
+      console.log(data);
+
+    })
+  },[])
 
   return (
     <div className="app">
@@ -26,13 +39,13 @@ const App = () => {
 
       <div className="main_body">
         <div className="post_side">
-          {posts.map((post) => {
+          {post.map((post) => {
             return (
               <Post
-                userName={post.userName}
-                postURL={post.postURL}
-                avatarURL={post.avatarURL}
-                comment={post.comment}
+                userName={post.user.full_name}
+                postURL={post.picture}
+                avatarURL="https://i.ibb.co/gP41JMd/Screenshot-2021-0622-215115.jpg"
+                comment={post.comments.comment}
               />
             );
           })}
