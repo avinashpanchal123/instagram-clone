@@ -8,6 +8,8 @@ import Suggestions from "./components/Suggestions";
 import Comments from "./components/comments/Comments";
 import SeeAll from "./components/SeeAll";
 
+import Profile from "./components/Profile";
+
 
 const App = () => {
   // const [posts, setPost] = useState([
@@ -80,7 +82,7 @@ const App = () => {
          
         </div>
       </div>
-     
+     <Profile/>
     </div>
   );
 };

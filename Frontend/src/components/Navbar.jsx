@@ -16,7 +16,8 @@ function Navbar() {
   return (
     <>
       <div className="main_container">
-        <div className="navbar">
+       <div className="navbar_wrapper">
+       <div className="navbar">
           <div className=" logo_div">
             <img className="logo_img" src="images/instagram-logo.png" alt="" />
           </div>
@@ -176,6 +177,7 @@ function Navbar() {
             </div>
           </div>
         </div>
+       </div>
         <div></div>
         <div className="search_icon_div">
           <SearchIcon style={{ display: disp }} className="search_logo" />

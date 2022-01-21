@@ -7,22 +7,21 @@ import { Avatar } from "@mui/material";
 import Modal from "react-modal";
 import UnfollowModal from "./UnfollowModal";
 import { grey } from "@mui/material/colors";
-const Modal_styles ={
-    content :{
-      color:"black",
-      background:"white",
-      width:"25rem",
-      height: "20rem",
-      margin:"20vh 32%",
-      borderRadius:"1rem",
-      overflow:"hidden"
-    }
-    // ,
-    // overlay:{
-    //   background:""
-    // }
-   
-}
+const Modal_styles = {
+  content: {
+    color: "black",
+    background: "white",
+    width: "25rem",
+    height: "20rem",
+    margin: "20vh 32%",
+    borderRadius: "1rem",
+    overflow: "hidden",
+  },
+  // ,
+  // overlay:{
+  //   background:""
+  // }
+};
 
 function Suggestions({ userName, avatarURL }) {
   const [modalIsOpen, setmodalIsOpen] = useState(false);
@@ -52,27 +51,33 @@ function Suggestions({ userName, avatarURL }) {
         </div>
         <div className="modal_div">
           <Modal
-         style={Modal_styles}
+            style={Modal_styles}
             isOpen={modalIsOpen}
             onRequestClose={() => {
               setmodalIsOpen(false);
             }}
-            
           >
             <Avatar
-            style={{ width: "4rem", height: "9vh" }}
-            className="unfollow_avatar"
-            alt="Remy Sharp"
-            src={avatarURL}
-          />
-            <p className="modalPara">If you change your mind, you'll have to request to 
-              follow @empty_girl__00 again</p>
+              style={{ width: "4rem", height: "9vh" }}
+              className="unfollow_avatar"
+              alt="Remy Sharp"
+              src={avatarURL}
+            />
+            <p className="modalPara">
+              If you change your mind, you'll have to request to follow
+              @empty_girl__00 again
+            </p>
             <hr />
             <button className="unfollow_btn">Unfollow</button>
             <hr />
-            <button onClick={()=>{
-              setmodalIsOpen(false)
-            }} className="cancle_btn">Cancle</button>
+            <button
+              onClick={() => {
+                setmodalIsOpen(false);
+              }}
+              className="cancle_btn"
+            >
+              Cancle
+            </button>
           </Modal>
         </div>
       </div>
