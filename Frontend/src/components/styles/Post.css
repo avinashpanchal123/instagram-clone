@@ -5,10 +5,12 @@
 }
 
 .post{
-    width: 50%;
+    width: 100%;
+    /* margin-left: 14%; */
     /* height: 70vh; */
     border: 1px solid gray;
     background-color: white;
+    margin-bottom: 10vh;
 }
 .avatar{
     margin: 2vh 2%;
@@ -27,6 +29,8 @@
 
 .post_img{
     width: 100%;
+    border-top:1px solid lightgray ;
+    border-bottom:1px solid lightgray ;
 }
 
 .caption_icons{
@@ -56,8 +60,3 @@
     border: 1px solid gainsboro;
 }
 
-.post_btn{
-    position: absolute;
-    right: 2%;
-    top: 50%;
-}
