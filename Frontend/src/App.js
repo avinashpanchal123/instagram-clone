@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect,useState } from "react";
 
 import "./App.css";
 import SwitchAC from "./components/SwitchAC";
@@ -10,7 +10,6 @@ import SeeAll from "./components/SeeAll";
 
 
 const App = () => {
-
   // const [posts, setPost] = useState([
   //   {
   //     userName: "Avinash",
@@ -22,7 +21,6 @@ const App = () => {
   // ]);
 
   const[post,setPost] = useState([]);
-
   useEffect(()=>{
     fetch("http://localhost:2345/post")
     .then(res=> res.json())
@@ -42,10 +40,10 @@ const App = () => {
           {post.map((post) => {
             return (
               <Post
-                userName={post.user.full_name}
+                userName={post.full_name}
                 postURL={post.picture}
                 avatarURL="https://i.ibb.co/gP41JMd/Screenshot-2021-0622-215115.jpg"
-                comment={post.comments.comment}
+                comment={post.comment}
               />
             );
           })}
