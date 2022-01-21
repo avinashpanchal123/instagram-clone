@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import "./styles/Profile.css";
-
+import Gallery from "../components/gallery/Gallery"
 import { Avatar } from "@mui/material";
 
 function Profile() {
@@ -86,7 +86,14 @@ function Profile() {
             </div>
           </div>
         </div>
+        <hr />
       </div>
+     
+      <div className="posts_wrapper">
+    
+          <Gallery/>
+        </div>
+
     </>
   );
 }

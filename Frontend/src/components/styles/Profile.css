@@ -10,6 +10,7 @@
     display: grid;
     height: 100%;
     grid-template-columns: 30% 50%;
+    margin-bottom: 8vh;
 }
 
 .profile_picture{
@@ -60,3 +61,16 @@
     grid-template-columns:30% 36% 33%;
     margin-bottom: 4vh;
 }
+
+
+.posts_wrapper{
+    width: 70%;
+    /* height: 1000vh; */
+    border: 2px solid gray;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 31.5% 31.5% 31.5%;
+    gap: 1.7rem;
+    margin-top: 8vh;
+}
+
