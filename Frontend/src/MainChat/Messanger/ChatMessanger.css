@@ -100,3 +100,9 @@ body{
     border: none;
 }
 /*****/
+.emojiBox{
+    position:absolute;
+    left:400px;
+    top:300px;
+    display:none;
+}

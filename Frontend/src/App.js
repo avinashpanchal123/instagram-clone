@@ -1,4 +1,4 @@
-import { Messanger } from "./Messanger/ChatMessanger"
+import { Messanger } from "./MainChat/Messanger/ChatMessanger"
 //import socketIO from "socket.io-client";
 
 import "./App.css"

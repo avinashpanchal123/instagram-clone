@@ -4,15 +4,26 @@ import { ConversationPerson } from "../ConversationPerson.jsx/ConversationPerson
 import { SendMessage } from "../SendMessage/SendMessage"
 import "./ChatMessanger.css"
 import ReactScrollToBottom from "react-scroll-to-bottom"
+import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react';
 
-
-
+var i=0
 let user = "vinay"
 
 const ENDPOINT = "http://localhost:4500/"
 let socket
 
 export const Messanger =()=>{
+
+    const [chosenEmoji, setChosenEmoji] = useState(null);
+
+    const onEmojiClick = (event, emojiObject) => {
+         console.log(event.target)
+        console.log(emojiObject.target)
+        //setChosenEmoji(emojiObject);
+       // const message = document.getElementById("chatvalue").value+ emojiObject.target
+     setMessages([...messages,emojiObject.target])
+    }
+
 
     const [id,setId ]= useState("")
     const [messages,setMessages] = useState([])
@@ -45,12 +56,12 @@ socket.emit("joined",{user})
   
 
    socket.on('userJoined',(data)=>{
-       setMessages([...messages,data])
+      // setMessages([...messages,data])
        console.log(data.user,data.message)
    })
 
    socket.on("leave",(data)=>{
-       setMessages([...messages,data])
+      // setMessages([...messages,data])
        console.log(data.user,data.message)
    })
 
@@ -88,8 +99,7 @@ useEffect(() => {
                <div className="nameListbox">
                   {/* dynamic aly bring data */}
                    <ConversationPerson/>
-                   <ConversationPerson/>
-                   <ConversationPerson/>
+                  
                 </div>
           </div>
          
@@ -109,7 +119,15 @@ useEffect(() => {
                                {messages.map((el,i)=> <SendMessage key={i}  user={el.id === id ? "": el.user} message={el.message} classs={el.id === id ?"right":"left"} />)}
                    </ReactScrollToBottom>
                    <div className="chatInputBox">
-                       <div className="emojs">
+                       <div className="emojs" onClick={()=>{
+                           
+                          var emo= document.getElementById("emoji")
+                         if(i%2 === 0 ){ 
+                             emo.style.display = "block"; 
+                             i++ 
+                            }else{ emo.style.display = "none"  ;  i++} 
+                         
+                          }} >
                           <svg aria-label="Emoji" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><path d="M15.83 10.997a1.167 1.167 0 101.167 1.167 1.167 1.167 0 00-1.167-1.167zm-6.5 1.167a1.167 1.167 0 10-1.166 1.167 1.167 1.167 0 001.166-1.167zm5.163 3.24a3.406 3.406 0 01-4.982.007 1 1 0 10-1.557 1.256 5.397 5.397 0 008.09 0 1 1 0 00-1.55-1.263zM12 .503a11.5 11.5 0 1011.5 11.5A11.513 11.513 0 0012 .503zm0 21a9.5 9.5 0 119.5-9.5 9.51 9.51 0 01-9.5 9.5z"></path></svg>
                        </div>
                        <div>
@@ -120,6 +138,14 @@ useEffect(() => {
                        </div>
                    </div>
               </div>
+          </div>
+         
+          <div className="emojiBox"   id="emoji">
+                  
+                  <div style={{textAlign: 'center',marginLeft:'300px'}}>
+                  <Picker  onEmojiClick={onEmojiClick} skinTone={SKIN_TONE_MEDIUM_DARK}/>
+                         { chosenEmoji}
+                 </div>
           </div>
     </div>
 }
