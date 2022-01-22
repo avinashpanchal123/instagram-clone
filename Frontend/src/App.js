@@ -9,8 +9,8 @@ import Comments from "./components/comments/Comments";
 import SeeAll from "./components/SeeAll";
 import Home from "./components/login/Home";
 import Profile from "./components/Profile";
-import { Routes, Route } from "react-router-dom";
-
+import { Routes, Route, Router } from "react-router-dom";
+import SignUp from "../src/components/signup/SignUp"
 const App = () => {
 
 
@@ -18,6 +18,7 @@ const App = () => {
     <div className="app">
       
       <Routes>
+        <Route path="/signup" element={<SignUp/>} ></Route>
       <Route path="/" element={<Home />}></Route>
         <Route path="/home" element={<MainBody />}></Route>
         <Route path="/chats" element={<Messanger />}></Route>
