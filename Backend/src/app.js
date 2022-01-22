@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+
 // const cors = require("cors");
 
 // app.use(cors())
@@ -12,10 +13,22 @@ app.use((req, res, next) => {
     next();
   }) 
 
-const {register,login} = require ("./controllers/user.controller");
+const {register,login,router} = require ("./controllers/user.controller");
 
 app.use("/signup", register);
 app.use("/login", login);
+
+app.get("/user/:id",async(req, res)=>{
+  try{
+      const posts = await User.findById(req.params.id).lean().exec();
+      return res.send(posts);
+  }
+  catch(e){
+      return res.status(400).json({ status:"failled", messege: e.messege});
+  }
+})
+
+module.exports = {register,login}
 
 
 
