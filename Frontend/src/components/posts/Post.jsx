@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { Avatar } from "@mui/material";
 
 import "../styles/Post.css";
+import Comments from "../comments/Comments";
 
 function Post() {
     const user = "Avinash"
@@ -17,27 +19,22 @@ function Post() {
       })
     },[])
 
+function Post({ userName, avatarURL, postURL, comment }) {
+ 
   return (
     <>
       <div>
         {/* <div className="post">
           <div className="post_header">
             <div className="avatar">
-              <Avatar
-                alt="Remy Sharp"
-                src="https://i.ibb.co/gP41JMd/Screenshot-2021-0622-215115.jpg"
-              />
+              <Avatar alt="Remy Sharp" src={avatarURL} />
             </div>
             <div>
-              <h3>{user}</h3>
+              <h3>{userName}</h3>
             </div>
           </div>
           <div className="post_div">
-            <img
-              className="post_img"
-              src="https://i.ibb.co/981hrmV/quotes01.png"
-              alt="post1"
-            />
+            <img className="post_img" src={postURL} alt="post1" />
           </div>
           {/* captio icons started 
           <div className="caption_icons">
@@ -121,6 +118,12 @@ function Post() {
         </div> */}
       <video src="https://player.vimeo.com/external/638803187.sd.mp4?s=c82aa6f7e334c5088ae9812a0811fd894fd4107e&profile_id=165&oauth2_token_id=57447761" width="750" height="500" controls>
        </video>
+          {/* captio icons ended */}
+
+          
+        
+          <Comments name={userName}/>
+        </div>
       </div>
     </>
   );
