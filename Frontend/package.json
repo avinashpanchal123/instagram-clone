@@ -2,6 +2,8 @@
   "name": "counter_app",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://http://localhost:2345/signup",
+
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
