@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import {Link} from "react-router-dom"
 import "../components/styles/Navbar.css";
 //GET https://youtube.googleapis.com/youtube/v3/search?part=title%2Csnippet&location=%20(37.42307%2C-122.08427).&locationRadius=500%20kilometers&maxResults=20&order=rating&videoCaption=closedCaption&videoDefinition=high&videoDuration=short&key=[YOUR_API_KEY] HTTP/1.1
 
@@ -31,6 +31,7 @@ function Navbar() {
           </div>
           <div className="grid_icons">
             <div>
+              <Link to="/home">
               <svg
                 aria-label="Home"
                 class="_8-yf5 "
@@ -49,10 +50,12 @@ function Navbar() {
                   stroke-width="2"
                 ></path>
               </svg>
+              </Link>
             </div>
-
+          
             <div>
-              <svg
+            <Link  to="/chats">
+            <svg
                 aria-label="Messenger"
                 class="_8-yf5 "
                 color="#262626"
@@ -74,6 +77,8 @@ function Navbar() {
                   fill-rule="evenodd"
                 ></path>
               </svg>
+            </Link>
+           
             </div>
             <div>
               <svg
@@ -168,12 +173,14 @@ function Navbar() {
               </svg>
             </div>
             <div>
-              <Avatar
+            <Link to="/profile">
+            <Avatar
               style={{ width: "1.7rem", height: "4vh" }}
                 className="nav_avatar"
                 alt="Remy Sharp"
                 src="https://i.ibb.co/gP41JMd/Screenshot-2021-0622-215115.jpg"
               />
+            </Link>
             </div>
           </div>
         </div>

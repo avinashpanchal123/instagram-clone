@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import Navbar from "./Navbar";
 import "./styles/Profile.css";
 import Gallery from "../components/gallery/Gallery"
 import { Avatar } from "@mui/material";
@@ -16,6 +16,7 @@ function Profile() {
   ]);
   return (
     <>
+    <Navbar/>
       <div className="profile_main_container">
         <div className="profile_wrapper">
           <div className="profile_picture">
