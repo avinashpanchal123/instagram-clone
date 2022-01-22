@@ -1,19 +1,19 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Navbar from "./Navbar";
 import "./styles/Profile.css";
 import Gallery from "../components/gallery/Gallery"
 import { Avatar } from "@mui/material";
 
 function Profile() {
-  const [profile, setProfile] = useState([
-    {
-      user_name: "avi.nash7602",
-      name: "avinash panchal",
-      posts: "6 posts",
-      followers: "88 followers",
-      following: "100 following",
-    },
-  ]);
+  const [post, setPost] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:2345/p")
+      .then((res) => res.json())
+      .then((data) => {
+        setPost(data);
+        console.log(data);
+      });
+  }, []);
   return (
     <>
     <Navbar/>
@@ -29,7 +29,7 @@ function Profile() {
           </div>
           <div className="profile_details">
             <div className="user_name_edit_wrapper">
-              <div className="user_name">{profile[0].user_name}</div>
+              <div className="user_name">avi.nash</div>
               <div className="edit_btn_div">
                 <button className="edit_btn">Edit Profile</button>
               </div>
@@ -77,7 +77,7 @@ function Profile() {
             </div>
             <div className="bio_wrapper">
               <div className="profile_name">
-                <strong>{profile[profile.length - 1].name}</strong>
+                <strong>hfakfadfsfs</strong>
               </div>
 
               <div>

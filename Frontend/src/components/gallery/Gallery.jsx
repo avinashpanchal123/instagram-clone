@@ -9,6 +9,7 @@ function Gallery() {
     "https://i.ibb.co/gP41JMd/Screenshot-2021-0622-215115.jpg",
     "https://i.ibb.co/gP41JMd/Screenshot-2021-0622-215115.jpg"
   ])
+  
   return <>
     
       {post.map(()=>{
