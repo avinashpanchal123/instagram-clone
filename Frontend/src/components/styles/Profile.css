@@ -1,7 +1,7 @@
 .profile_main_container{
     width: 70%;
     /* height: 5000vh; */
-    border: 2px solid black;
+    /* border: 2px solid black; */
     margin: auto;
 }
 
@@ -14,13 +14,13 @@
 }
 
 .profile_picture{
-    border: 2px solid red;
+    /* border: 2px solid red; */
     height: 100%;
     padding: 10vh 3rem;
 }
 
 .profile_details{
-    border: 2px solid green;
+    /* border: 2px solid green; */
     height: 100%;
     padding-top:10vh;
     padding-left: 1.5rem;
@@ -36,11 +36,11 @@
 .user_name{
     font-size: 1.5rem;
     width: 100%;
-    border:1px dotted red;
+    /* border:1px dotted red; */
 }
 
 .edit_btn_div{
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     text-align: center;
 }
 .edit_btn{
@@ -57,7 +57,7 @@
 .post_follower_wrapper{
     display: grid;
     width:70% ;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     grid-template-columns:30% 36% 33%;
     margin-bottom: 4vh;
 }
@@ -66,7 +66,7 @@
 .posts_wrapper{
     width: 70%;
     /* height: 1000vh; */
-    border: 2px solid gray;
+    /* border: 2px solid gray; */
     margin: auto;
     display: grid;
     grid-template-columns: 31.5% 31.5% 31.5%;

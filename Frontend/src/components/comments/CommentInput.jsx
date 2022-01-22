@@ -18,7 +18,7 @@ function CommentInput({ func }) {
     <>
     <div className="comment_section">
     <div className="input_comment_div">
-        <input
+        <input 
           value={comment}
           onChange={CommentHandler}
           className="input_comment"

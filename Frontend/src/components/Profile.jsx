@@ -5,15 +5,17 @@ import Gallery from "../components/gallery/Gallery"
 import { Avatar } from "@mui/material";
 
 function Profile() {
-  const [post, setPost] = useState([]);
+  const [user, setUser] = useState([]);
+
   useEffect(() => {
-    fetch("http://localhost:2345/p")
+    fetch("http://localhost:2345/user/61e93bc2f10b65e594c6cc5f")
       .then((res) => res.json())
       .then((data) => {
-        setPost(data);
+        setUser(data);
         console.log(data);
-      });
-  }, []);
+      })
+    }, []);
+ console.log(user);
   return (
     <>
     <Navbar/>
@@ -24,12 +26,12 @@ function Profile() {
               style={{ width: "9rem", height: "22vh" }}
               className="suggestion_user_avatar"
               alt="Remy Sharp"
-              src="https://i.ibb.co/gP41JMd/Screenshot-2021-0622-215115.jpg"
+              src={user?.profile_picture}
             />
           </div>
           <div className="profile_details">
             <div className="user_name_edit_wrapper">
-              <div className="user_name">avi.nash</div>
+              <div className="user_name">dfasfa</div>
               <div className="edit_btn_div">
                 <button className="edit_btn">Edit Profile</button>
               </div>
@@ -66,18 +68,18 @@ function Profile() {
             </div>
             <div className="post_follower_wrapper">
               <div className="posts">
-                <strong>6</strong> posts
+                <strong>asfafs</strong> posts
               </div>
               <div className="followers">
-                <strong>88</strong>followers
+                <strong>dg</strong>followers
               </div>
               <div className="following">
-                <strong>200</strong> following
+                <strong>fgsfsf</strong> following
               </div>
             </div>
             <div className="bio_wrapper">
               <div className="profile_name">
-                <strong>hfakfadfsfs</strong>
+                <strong>{user.full_name}</strong>
               </div>
 
               <div>
