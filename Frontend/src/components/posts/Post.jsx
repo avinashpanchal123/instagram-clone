@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { Avatar } from "@mui/material";
 
@@ -6,10 +6,21 @@ import "../styles/Post.css";
 
 function Post() {
     const user = "Avinash"
+    const[post,setPost] = useState([]);
+    useEffect(()=>{
+      fetch("http://localhost:2345/post")
+      .then(res=> res.json())
+      .then(data=>{
+        setPost(data);
+        console.log(data);
+
+      })
+    },[])
+
   return (
     <>
       <div>
-        <div className="post">
+        {/* <div className="post">
           <div className="post_header">
             <div className="avatar">
               <Avatar
@@ -28,7 +39,7 @@ function Post() {
               alt="post1"
             />
           </div>
-          {/* captio icons started */}
+          {/* captio icons started 
           <div className="caption_icons">
             <div>
               <svg
@@ -95,7 +106,7 @@ function Post() {
               </svg>
             </div>
           </div>
-            {/* captio icons ended */}
+            {/* captio icons ended 
 
             <div className="post_comments">
                 <h4 className="comment_text">
@@ -107,10 +118,27 @@ function Post() {
             </div>
             <button className="post_btn">Post</button>
            </div>
-        </div>
+        </div> */}
+      <video src="https://player.vimeo.com/external/638803187.sd.mp4?s=c82aa6f7e334c5088ae9812a0811fd894fd4107e&profile_id=165&oauth2_token_id=57447761" width="750" height="500" controls>
+       </video>
       </div>
     </>
   );
 }
 
 export default Post;
+
+
+
+// const ass= "https://masai-course.s3.ap-south-1.amazonaws.com/users/806/submissions/107528/253477/d28b85bee79eef87fd2a8913d6fee1c0/zoom_8.mp4"
+//  const Extra =()=>{
+//     return (
+//         <div className="App">
+//         <p>hello</p>
+//         <video src={ass} width="750" height="500" controls>
+//        </video>
+//         </div>
+//       );
+// }
+
+// export {Extra}
