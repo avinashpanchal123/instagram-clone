@@ -7,7 +7,7 @@ const Post = require ("../models/post.model");
 
 router.get("/", async (req,res)=>{
     try{
-        const posts = await Post.find().populate("comments").lean().exec();
+        const posts = await Post.find().populate("comments").populate("user").lean().exec();
         return res.send(posts);
 
     }catch(e){
