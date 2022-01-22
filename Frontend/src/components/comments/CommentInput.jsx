@@ -18,7 +18,8 @@ function CommentInput({ func }) {
     <>
     <div className="comment_section">
     <div className="input_comment_div">
-        <input
+        <input 
+        onKeyPress={(e)=> e.key === "Enter"? CommentsListHandler() : null}
           value={comment}
           onChange={CommentHandler}
           className="input_comment"
