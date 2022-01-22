@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import React, { useState } from "react";
 
 import { Avatar } from "@mui/material";
@@ -5,12 +6,25 @@ import { Avatar } from "@mui/material";
 import "../styles/Post.css";
 import Comments from "../comments/Comments";
 
+function Post() {
+    const user = "Avinash"
+    const[post,setPost] = useState([]);
+    useEffect(()=>{
+      fetch("http://localhost:2345/post")
+      .then(res=> res.json())
+      .then(data=>{
+        setPost(data);
+        console.log(data);
+
+      })
+    },[])
+
 function Post({ userName, avatarURL, postURL, comment }) {
  
   return (
     <>
       <div>
-        <div className="post">
+        {/* <div className="post">
           <div className="post_header">
             <div className="avatar">
               <Avatar alt="Remy Sharp" src={avatarURL} />
@@ -22,7 +36,7 @@ function Post({ userName, avatarURL, postURL, comment }) {
           <div className="post_div">
             <img className="post_img" src={postURL} alt="post1" />
           </div>
-          {/* captio icons started */}
+          {/* captio icons started 
           <div className="caption_icons">
             <div>
               <svg
@@ -89,6 +103,21 @@ function Post({ userName, avatarURL, postURL, comment }) {
               </svg>
             </div>
           </div>
+            {/* captio icons ended 
+
+            <div className="post_comments">
+                <h4 className="comment_text">
+                   <strong> {user} </strong> I like it</h4>
+            </div>
+           <div className="comment_div">
+           <div className="input_comment_div">
+                <input className="input_comment" type="text" />
+            </div>
+            <button className="post_btn">Post</button>
+           </div>
+        </div> */}
+      <video src="https://player.vimeo.com/external/638803187.sd.mp4?s=c82aa6f7e334c5088ae9812a0811fd894fd4107e&profile_id=165&oauth2_token_id=57447761" width="750" height="500" controls>
+       </video>
           {/* captio icons ended */}
 
           
@@ -101,3 +130,18 @@ function Post({ userName, avatarURL, postURL, comment }) {
 }
 
 export default Post;
+
+
+
+// const ass= "https://masai-course.s3.ap-south-1.amazonaws.com/users/806/submissions/107528/253477/d28b85bee79eef87fd2a8913d6fee1c0/zoom_8.mp4"
+//  const Extra =()=>{
+//     return (
+//         <div className="App">
+//         <p>hello</p>
+//         <video src={ass} width="750" height="500" controls>
+//        </video>
+//         </div>
+//       );
+// }
+
+// export {Extra}
