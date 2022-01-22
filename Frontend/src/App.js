@@ -82,7 +82,7 @@ const App = () => {
          
         </div>
       </div>
-     <Profile/>
+     {/* <Profile/> */}
     </div>
   );
 };
