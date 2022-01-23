@@ -16,11 +16,12 @@ const Modal_styles = {
     margin: "20vh 32%",
     borderRadius: "1rem",
     overflow: "hidden",
-  },
-  // ,
-  // overlay:{
-  //   background:""
-  // }
+   
+  }
+  ,
+  overlay:{
+    background:'transperant'
+  }
 };
 
 function Suggestions({ userName, avatarURL }) {
@@ -60,8 +61,8 @@ function Suggestions({ userName, avatarURL }) {
             src={el.profile_picture}
           />
           <div>
-            <h4>{el.username}</h4>
-            <h5>{el.full_name}</h5>
+            <h5>{el.username}</h5>
+            <h6>{el.full_name}</h6>
           </div>
           <div>
             <button onClick={ModalHandler} className="follow_btn">
@@ -89,9 +90,9 @@ function Suggestions({ userName, avatarURL }) {
             </p>
             <hr />
             <button
-             onClick={() => {
-              setmodalIsOpen(false);
-            }}
+              onClick={() => {
+                setmodalIsOpen(false);
+              }}
              className="unfollow_btn">Unfollow</button>
             <hr />
             <button

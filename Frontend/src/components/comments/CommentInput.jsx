@@ -1,9 +1,12 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import "../styles/CommentInput.css"
 
 function CommentInput({ func }) {
   const [comment, setComment] = useState("");
+
+  
+
+
 
   const CommentHandler = (event) => {
     let newComment = event.target.value;
