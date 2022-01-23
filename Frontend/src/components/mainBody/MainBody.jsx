@@ -4,6 +4,8 @@ import "./MainBody.css"
 import Post from "../../components/posts/Post";
 import Suggestions from "../Suggestions";
 import Navbar from "../Navbar";
+import SwitchAC from "../SwitchAC"
+import SeeAll from "../SeeAll"
 
 function MainBody() {
     const [post, setPost] = useState([]);
@@ -31,7 +33,9 @@ function MainBody() {
             );
           })}
         </div>
-        <div className="suggestions">
+        <div className="ac_follow_side">
+          <SwitchAC/>
+          <SeeAll/>
             <Suggestions/>
         </div>
       </div> 

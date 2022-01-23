@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {Link} from "react-router-dom"
 import "../components/styles/Navbar.css";
 //GET https://youtube.googleapis.com/youtube/v3/search?part=title%2Csnippet&location=%20(37.42307%2C-122.08427).&locationRadius=500%20kilometers&maxResults=20&order=rating&videoCaption=closedCaption&videoDefinition=high&videoDuration=short&key=[YOUR_API_KEY] HTTP/1.1
@@ -8,10 +8,19 @@ import { Avatar } from "@mui/material";
 function Navbar() {
   const inline = "inline";
   const [disp, setDisplay] = useState(inline);
-
+  const [user, setUser] = useState([]);
   const displayHandler = () => {
     setDisplay("none");
   };
+  
+  useEffect(() => {
+    fetch("http://localhost:2345/user/61e93bc2f10b65e594c6cc5f")
+      .then((res) => res.json())
+      .then((data) => {
+        setUser(data);
+        console.log(data);
+      })
+    }, []);
 
   return (
     <>
@@ -178,7 +187,7 @@ function Navbar() {
               style={{ width: "1.7rem", height: "4vh" }}
                 className="nav_avatar"
                 alt="Remy Sharp"
-                src="https://i.ibb.co/gP41JMd/Screenshot-2021-0622-215115.jpg"
+                src={user?.profile_picture}
               />
             </Link>
             </div>

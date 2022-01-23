@@ -7,7 +7,7 @@ const Post = require ("../models/post.model");
 
 router.get("/", async (req,res)=>{
     try{
-        const posts = await Post.find().populate("comments").lean().exec();
+        const posts = await Post.find().populate("comments").populate("user").lean().exec();
         return res.send(posts);
 
     }catch(e){
@@ -50,5 +50,16 @@ router.patch("/like/:id", async (req,res)=>{
     
 
 });
+
+
+router.get("/:id", async (req,res)=>{
+    try{
+        const posts = await Post.find({user:req.params.id}).lean().exec();
+        return res.send(posts);
+
+    }catch(e){
+        return res.status(400).json({ status: "failed", message: e.message });
+    }
+})
 
 module.exports = router;

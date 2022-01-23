@@ -24,7 +24,7 @@ function SignUpForm(){
     const handleSubmit = (e)=>{
         e.preventDefault();
         dispatch(isLoading(true));
-        fetch("http://localhost:2345/signup",{
+        fetch("http://localhost:3005/signup",{
             
             method: "POST",
             body: JSON.stringify(formData),

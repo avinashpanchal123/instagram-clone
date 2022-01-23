@@ -1,7 +1,6 @@
 const User = require ("../models/user.model");
-const experss = require("express")
 
-const router = experss.Router()
+
 const register = async (req,res)=>{
     try{
         let user = await User.findOne({email:req.body.email}).lean().exec();
@@ -59,9 +58,6 @@ const login = async (req,res)=>{
     }catch(e){
         return res.status(400).json({ status:"failled", message: e.message});
     }
-
-    
 }
- 
 
-
+module.exports = {register,login}

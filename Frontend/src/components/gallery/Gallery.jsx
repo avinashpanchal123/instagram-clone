@@ -1,23 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import "../styles/Gallery.css"
 
+
 function Gallery() {
-    let i = 0
-  const [post, setPost] = useState([
-    "https://i.ibb.co/gP41JMd/Screenshot-2021-0622-215115.jpg",
-    "https://i.ibb.co/gP41JMd/Screenshot-2021-0622-215115.jpg",
-    "https://i.ibb.co/gP41JMd/Screenshot-2021-0622-215115.jpg",
-    "https://i.ibb.co/gP41JMd/Screenshot-2021-0622-215115.jpg"
-  ])
+  const [pic, setPic] = useState([]);
+
+    useEffect(() => {
+      fetch("http://localhost:2345/post/61e93bc2f10b65e594c6cc5f")
+        .then((res) => res.json())
+        .then((data) => {
+          setPic(data);
+          console.log(data);
+        });
+    }, []);
   
   return <>
     
-      {post.map(()=>{
+      {pic.map((el)=>{
       return  <div className="post_img_div">
-          <img src={post[i]} alt="post" />
+          <img src={el.picture} alt="post" />
         
         </div>
-        i++
+      
       })
     
       }
