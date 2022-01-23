@@ -23,7 +23,7 @@ body{
     width: 100%;
     display: flex;
     /* justify-content: space-between; */
-  
+    max-height: 68px;
     padding: 5%;
     padding-left : 30%;
     
@@ -38,7 +38,7 @@ body{
 .personName{
     font-size: large;
     font-weight: 900;
-    padding: 4%;
+  
 }
 .penImg{
     
