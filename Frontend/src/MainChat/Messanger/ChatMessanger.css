@@ -37,7 +37,7 @@ body{
 }
 .personName{
     font-size: large;
-    font-weight: 900;
+    font-weight: 500;
   
 }
 .penImg{
@@ -57,7 +57,7 @@ body{
     width: 60%;
 }
 .Topname{
-    height: 72px;
+    height: 65px;
     display: flex;
     /* border: 1px solid #DBDBDB; */
     padding-left: 5%;
