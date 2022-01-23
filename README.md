@@ -38,7 +38,7 @@ To create this clone following Tech stack is used by contributors.
 <img src="https://imgur.com/HTRG1G8.png"/>
 
 #### Landing Page:
-<img src="https://imgur.com/kUATCyG7.png"/>
+<img src="https://imgur.com/kUATCyG.png"/>
 
 <!-- #### Upload Page:
 <img src="https://i.imgur.com/l111CAG.png"/> -->
