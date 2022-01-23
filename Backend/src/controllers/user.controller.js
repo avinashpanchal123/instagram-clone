@@ -14,18 +14,18 @@ const register = async (req,res)=>{
         return res.status(201).send(user);
 
     }catch(e){
-        return res.status(400).json({ status:"failled", messege: e.messege});
+        return res.status(400).json({ status:"failed", messege: e.message});
     }
 }
 
 const login = async (req,res)=>{
     try{
         let user = await User.findOne({email:req.body.email});
-        let username = await User.findOne({username:req.body.username});
+        let username = await User.findOne({username:req.body.email});
         console.log(user,username);
 
         if(!user && !username){
-            return res.status(400).send("email or password is incorrect");
+            return res.status(201).json({status:"failled",message: "email or password is incorrect"});
 
         }
         console.log("aaaa");
@@ -39,7 +39,7 @@ const login = async (req,res)=>{
             if(match){
                 return res.send(username);
             }else{
-                return res.status(400).send("email or password is incorrect");
+                return res.status(201).json({status:"failled",message: "email or password is incorrect"});
             }
 
         } else{
@@ -48,7 +48,7 @@ const login = async (req,res)=>{
             if(match){
                 return res.send(user);
             }else{
-                return res.status(400).send("email or password is incorrect");
+                return res.status(201).json({status:"failled",message: "email or password is incorrect"});
             }
 
         }

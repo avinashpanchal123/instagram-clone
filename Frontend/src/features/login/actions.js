@@ -1,6 +1,5 @@
-
 import {  IS_LOADING } from "./actiontypes";
-import { SIGN_UP } from "./actiontypes";
+import { LOG_IN } from "./actiontypes";
 import { IS_ERROR} from "./actiontypes";
 
 
@@ -9,8 +8,8 @@ export const isLoading = ()=>({
     
 });
 
-export const isSignup = (data)=>({
-    type: SIGN_UP,
+export const isLogin = (data)=>({
+    type: LOG_IN,
     payload: data
 });
 

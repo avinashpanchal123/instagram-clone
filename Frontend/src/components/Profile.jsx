@@ -6,9 +6,14 @@ import { Avatar } from "@mui/material";
 
 function Profile() {
   const [user, setUser] = useState([]);
+  
 
   useEffect(() => {
-    fetch("http://localhost:2345/user/61e93bc2f10b65e594c6cc5f")
+    let token = JSON.parse (localStorage.getItem ('user'));
+    console.log(token);
+    
+
+    fetch(`http://localhost:3005/user/${token[0]}`)
       .then((res) => res.json())
       .then((data) => {
         setUser(data);

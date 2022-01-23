@@ -18,8 +18,9 @@ const App = () => {
     <div className="app">
       
       <Routes>
+        <Route path="*" element={<Home />}></Route>
         <Route path="/signup" element={<SignUp/>} ></Route>
-      <Route path="/" element={<Home />}></Route>
+      
         <Route path="/home" element={<MainBody />}></Route>
         <Route path="/chats" element={<Messanger />}></Route>
         <Route path="/profile" element={<Profile />}></Route>

@@ -1,8 +1,8 @@
 import { IS_LOADING } from "./actiontypes";
-import { SIGN_UP } from "./actiontypes";
+import { LOG_IN } from "./actiontypes";
 import { IS_ERROR} from "./actiontypes";
 
-let init = {isloading:false,iserror:false,signup:false}
+let init = {isloading:false,iserror:false,login:false}
 export const reducer = (state=init, { type, payload })=>{
     switch (type){
         case IS_LOADING:
@@ -20,11 +20,11 @@ export const reducer = (state=init, { type, payload })=>{
                     isloading: false
                 }
             );
-        case SIGN_UP:
+        case LOG_IN:
             return (
                 {
                     ...state,
-                    signup:payload,
+                    login:payload,
                     isloading: false,
                     iserror:false
                 }

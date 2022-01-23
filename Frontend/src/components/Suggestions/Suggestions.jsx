@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import "./styles/Suggestions.css";
 
@@ -25,13 +25,23 @@ const Modal_styles = {
 
 function Suggestions({ userName, avatarURL }) {
   const [modalIsOpen, setmodalIsOpen] = useState(false);
+  const [users,setUsers] = useState([]);
 
   const ModalHandler = () => {
     setmodalIsOpen(true);
   };
+
+  useEffect(()=>{
+    fetch("http://localhost:3005/user")
+    .then(res=> res.json())
+    .then(data=>{
+         setUsers(data);
+    })
+  })
   return (
     <>
       <div className="suggestions">
+
         <div className="few_suggestions">
           <Avatar
             style={{ width: "2rem", height: "5vh" }}

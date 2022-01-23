@@ -2,13 +2,15 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./SignUp.css";
 import {isLoading,isSignup,isError} from "../../features/signup/actions";
+import {  Navigate } from "react-router-dom";
+
 
 function SignUpForm(){
     let [formData,setFormData] = useState({});
-    const { isloadind, signup, iserror } = useSelector((state)=>({
-        isloadind: state.isloadind,
-        signup: state.signup,
-        iserror: state.iserror
+    const { isloading, signup, iserror } = useSelector((state)=>({
+        isloading: state.signup.isloading,
+        signup: state.signup.signup,
+        iserror: state.signup.iserror
     }));
     const dispatch = useDispatch();
     const handlechange = (e)=>{
@@ -23,7 +25,9 @@ function SignUpForm(){
 
     const handleSubmit = (e)=>{
         e.preventDefault();
-        dispatch(isLoading(true));
+        console.log("aaaaaa")
+        dispatch(isLoading());
+        console.log(isloading);
         fetch("http://localhost:3005/signup",{
             
             method: "POST",
@@ -36,19 +40,23 @@ function SignUpForm(){
         })
         .then(res => res.json())
         .then(data =>{
-            console.log(data)
-            if(data){
-                dispatch(isSignup(true));
-                console.log(data);
-            }else{
+            
+            if(data.status==="failed"){
                 dispatch(isError(true));
-                console.log(data);
+                console.log("d",data);
+            }else{
+                 dispatch(isSignup(true));
+                
+                
             }
         })
         .catch(()=>{
             dispatch(isError(true));
         })
 
+    }
+    if(signup){
+        return < Navigate to={"/"} />;
     }
     return (
         <div className="signup-box">
@@ -68,13 +76,14 @@ function SignUpForm(){
             </div>
             <form onSubmit={handleSubmit}>
                 <input type="text" name="email" placeholder="Mobile Number or Email"onChange={handlechange} />
-                <input type="text" name="name" placeholder="Full Name" onChange={handlechange}/>
+                <input type="text" name="full_name" placeholder="Full Name" onChange={handlechange}/>
                 <input type="text" name="username" placeholder="Username" onChange={handlechange}/>
                 <input type="password" name="password" placeholder="Password" onChange={handlechange}/>
-                <input type="submit" value={isloadind?"loading..":"Sign Up"} />
+                  
+                <input type="submit" value={isloading?"loading...":"Sign Up"}  ></input>
             </form>
             {iserror?<p>email or phone already esits</p>:null}
-            {signup?<p>success</p>:null}
+            
             <p>By signing up, you agree to our Terms , Data Policy and Cookies Policy .</p>
         </div>
     )

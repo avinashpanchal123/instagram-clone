@@ -10,7 +10,7 @@ import SeeAll from "../SeeAll"
 function MainBody() {
     const [post, setPost] = useState([]);
     useEffect(() => {
-      fetch("http://localhost:2345/post")
+      fetch("http://localhost:3005/post")
         .then((res) => res.json())
         .then((data) => {
           setPost(data);

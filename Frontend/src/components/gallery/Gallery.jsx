@@ -6,7 +6,7 @@ function Gallery() {
   const [pic, setPic] = useState([]);
 
     useEffect(() => {
-      fetch("http://localhost:2345/post/61e93bc2f10b65e594c6cc5f")
+      fetch("http://localhost:3005/post/61e93bc2f10b65e594c6cc5f")
         .then((res) => res.json())
         .then((data) => {
           setPic(data);

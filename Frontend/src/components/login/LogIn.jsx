@@ -1,13 +1,29 @@
 import { useEffect, useState } from "react";
 import "./LogIn.css";
 import LogInForm from "./LogInForm";
-import {Link} from "react-router-dom";
+import {Link, Navigate} from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { isSignup } from "../../features/signup/actions"
 
 
 function LogIn(){
     let images = ["https://www.instagram.com/static/images/homepage/screenshot1.jpg/d6bf0c928b5a.jpg","https://www.instagram.com/static/images/homepage/screenshot2.jpg/6f03eb85463c.jpg","https://www.instagram.com/static/images/homepage/screenshot3.jpg/f0c687aa6ec2.jpg","https://www.instagram.com/static/images/homepage/screenshot4.jpg/842fe5699220.jpg","https://www.instagram.com/static/images/homepage/screenshot5.jpg/0a2d3016f375.jpg"]
     const [img,setImg] = useState(0);
+    const {signup} = useSelector((state)=>({
+        signup:state.signup.signup
+    }))
+    const dispatch= useDispatch();
+    
+    const handleSignupClick = ()=>{
+        
+        dispatch(isSignup(false));
 
+    }
+
+    useEffect(()=>{
+        return < Navigate to={"/signup"} />;
+
+    },[signup])
     
     useEffect(()=>{
         let id = setInterval(()=>{
@@ -53,7 +69,7 @@ function LogIn(){
 
                 </div>
                 <div className="signup">
-                   Don't have an account? <Link to="/signup" className="link"> <span style={{color:"#0095f6",fontWeight:"600"}}> Sign up</span> </Link>
+                   Don't have an account? <Link to="/signup" className="link"><span style={{color:"#0095f6",fontWeight:"600"}}  onClick={handleSignupClick}> Sign up</span></Link>  
 
                 </div>
                 Get the app.
