@@ -14,7 +14,7 @@ To create this clone following Tech stack is used by contributors.
 *  **Atlas** 
 *  **mongoose** 
 *  **JSX** 
-*  **CSS** 
+*  **Tailwind CSS** 
 *  **React Router Dom** 
 *  **material-ui/core** 
 *  **axios** 
