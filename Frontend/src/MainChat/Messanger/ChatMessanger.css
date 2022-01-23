@@ -102,7 +102,7 @@ body{
 /*****/
 .emojiBox{
     position:absolute;
-    left:400px;
-    top:300px;
+    top: 42vh;
+    left: 25%;
     display:none;
 }
