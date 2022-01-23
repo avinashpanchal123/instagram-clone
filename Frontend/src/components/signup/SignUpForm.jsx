@@ -73,7 +73,7 @@ function SignUpForm(){
                 <input type="password" name="password" placeholder="Password" onChange={handlechange}/>
                 <input type="submit" value={isloadind?"loading..":"Sign Up"} />
             </form>
-            {iserror?<p>email or phone already esits</p>:null}
+            {iserror?<p>email or phone already exits</p>:null}
             {signup?<p>success</p>:null}
             <p>By signing up, you agree to our Terms , Data Policy and Cookies Policy .</p>
         </div>
