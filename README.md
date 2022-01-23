@@ -38,7 +38,7 @@ To create this clone following Tech stack is used by contributors.
 <img src="https://imgur.com/HTRG1G8.png"/>
 
 #### Landing Page:
-<img src="https://i.imgur.com/fCzEgw7.png"/>
+<img src="https://imgur.com/kUATCyG7.png"/>
 
 <!-- #### Upload Page:
 <img src="https://i.imgur.com/l111CAG.png"/> -->
@@ -50,7 +50,7 @@ To create this clone following Tech stack is used by contributors.
 <img src="https://i.imgur.com/cqIyXOx.png"/> -->
 
 #### Chat Page:
-<img src="https://imgur.com/aEIuR5D.png"/>
+<img src="https://imgur.com/UXJzj9O.png"/>
 
 
 <hr/>
