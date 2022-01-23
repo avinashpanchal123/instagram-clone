@@ -12,7 +12,7 @@
 
 .ac_follow_side{
     width: 34%;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     height: 70vh;
     padding-left: 1%;
     position: sticky;

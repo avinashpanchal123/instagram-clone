@@ -22,13 +22,13 @@ function MainBody() {
     <Navbar />
        <div className="main_body">
         <div className="post_side">
-          {post.map((post) => {
+          {post.map((el) => {
             return (
               <Post
-                userName={post.full_name}
-                postURL={post.picture}
-                avatarURL="https://i.ibb.co/gP41JMd/Screenshot-2021-0622-215115.jpg"
-                comment={post.comment}
+                userName={el.user.username}
+                postURL={el.picture}
+                avatarURL={el.user.profile_picture}
+                comment={el.comment}
               />
             );
           })}
