@@ -26,7 +26,7 @@ function LogInForm(){
         console.log("aaaaaa")
         dispatch(isLoading());
         console.log(isloading);
-        fetch("http://localhost:3005/login",{
+        fetch("https://instagram-backend-dipu1-app.herokuapp.com/login",{
             
             method: "POST",
             body: JSON.stringify(formData),

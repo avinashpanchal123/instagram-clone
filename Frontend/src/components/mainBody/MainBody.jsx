@@ -10,7 +10,7 @@ import SeeAll from "../SeeAll"
 function MainBody() {
     const [post, setPost] = useState([]);
     useEffect(() => {
-      fetch("http://localhost:3005/post")
+      fetch("https://instagram-backend-dipu1-app.herokuapp.com/post")
         .then((res) => res.json())
         .then((data) => {
           setPost(data);

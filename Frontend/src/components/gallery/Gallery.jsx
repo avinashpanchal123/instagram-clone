@@ -6,7 +6,7 @@ function Gallery() {
   const [pic, setPic] = useState([]);
 
     useEffect(() => {
-      fetch("http://localhost:3005/post/61e93bc2f10b65e594c6cc5f")
+      fetch("https://instagram-backend-dipu1-app.herokuapp.com/post/61e93bc2f10b65e594c6cc5f")
         .then((res) => res.json())
         .then((data) => {
           setPic(data);

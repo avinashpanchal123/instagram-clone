@@ -5,7 +5,7 @@ body{
 .main{
     display: flex;
     max-width: 935px;
-    min-height: 100nh;
+    min-height: 80nh;
     margin: 32px auto 0;
     
     padding: 50px;
@@ -14,7 +14,7 @@ body{
 }
 .slideshow{
     width: 240px;
-    height: 427px;
+    height: 327px;
     
     margin-top: 100px;
     margin-left: 151px;
@@ -25,9 +25,9 @@ body{
 
 .home-img{
     flex-basis: 454px;
-    height: 618px;
+    height: 418px;
     background-image: url(https://www.instagram.com/static/images/homepage/home-phones.png/43cc71bb1b43.png);
-    
+    background-size: auto;
 }
 .login-form{
     justify-content: center;

@@ -32,7 +32,7 @@ function Suggestions({ userName, avatarURL }) {
   };
 
   useEffect(()=>{
-    fetch("http://localhost:3005/user")
+    fetch("https://instagram-backend-dipu1-app.herokuapp.com/user")
     .then(res=> res.json())
     .then(data=>{
          setUsers(data);
