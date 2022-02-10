@@ -19,7 +19,7 @@ function Profile() {
         setUser(data);
         console.log(data);
       })
-    }, []);
+    },[]);
  console.log(user);
   return (
     <>
@@ -36,7 +36,7 @@ function Profile() {
           </div>
           <div className="profile_details">
             <div className="user_name_edit_wrapper">
-              <div className="user_name">dfasfa</div>
+              <div className="user_name">{user?.username}</div>
               <div className="edit_btn_div">
                 <button className="edit_btn">Edit Profile</button>
               </div>
@@ -73,13 +73,13 @@ function Profile() {
             </div>
             <div className="post_follower_wrapper">
               <div className="posts">
-                <strong>asfafs</strong> posts
+                <strong>11</strong> posts
               </div>
               <div className="followers">
-                <strong>dg</strong>followers
+                <strong>5</strong>followers
               </div>
               <div className="following">
-                <strong>fgsfsf</strong> following
+                <strong>39</strong> following
               </div>
             </div>
             <div className="bio_wrapper">
