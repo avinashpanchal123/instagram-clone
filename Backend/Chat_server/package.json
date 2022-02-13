@@ -1,11 +1,14 @@
 {
-  "name": "Chat_Server",
+  "name": "Chat Server",
   "version": "1.0.0",
   "description": "",
   "main": "ChatServer.js",
   "scripts": {
     "start": "nodemon ChatServer.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines":{
+    "node": "17.1.0"
   },
   "keywords": [],
   "author": "",

@@ -6,7 +6,8 @@ function Gallery() {
   const [pic, setPic] = useState([]);
 
     useEffect(() => {
-      fetch("https://instagram-backend-dipu1-app.herokuapp.com/post/61e93bc2f10b65e594c6cc5f")
+      let token = JSON.parse (localStorage.getItem ('user'));
+      fetch(`https://instagram-backend-dipu1-app.herokuapp.com/post/${token[0]}`)
         .then((res) => res.json())
         .then((data) => {
           setPic(data);
