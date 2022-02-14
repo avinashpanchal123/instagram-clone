@@ -5,7 +5,7 @@ const socketIO = require("socket.io")
 const { Socket } = require("engine.io")
 
 const app = express()
-const port = 4500 || process.env.PORT
+const port = process.env.PORT || 4500;
 
 const users=[{}]
 
@@ -36,7 +36,7 @@ io.on("connection",(socket)=>{
         
         console.log("from server ",message,id)
        io.emit("sendMessage",{ user:users[id] , message , id })
- })
+    })
 
     socket.on("disconnect",()=>{
         socket.broadcast.emit("leave",{ user:"Admin",message:`${users[socket.id]} has left`})

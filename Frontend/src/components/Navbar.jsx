@@ -21,7 +21,7 @@ function Navbar() {
     console.log(token);
     
 
-    fetch(`http://localhost:3005/user/${token[0]}`)
+    fetch(`https://instagram-backend-dipu1-app.herokuapp.com/user/${token[0]}`)
       .then((res) => res.json())
       .then((data) => {
         setUser(data);

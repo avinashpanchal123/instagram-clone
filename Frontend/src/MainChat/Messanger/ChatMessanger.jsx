@@ -10,7 +10,7 @@ import Navbar from "../../components/Navbar"
 var i=0
 let user = "vinay"
 
-const ENDPOINT = "http://localhost:4500/"
+const ENDPOINT = "https://instagram-chat-server.herokuapp.com"
 let socket
 
 export const Messanger =()=>{
@@ -95,7 +95,7 @@ useEffect(() => {
     console.log(token);
     
 
-    fetch(`http://localhost:3005/user/${token[0]}`)
+    fetch(`https://instagram-backend-dipu1-app.herokuapp.com/user/${token[0]}`)
       .then((res) => res.json())
       .then((data) => {
         setUser(data);

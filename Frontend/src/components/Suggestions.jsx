@@ -36,7 +36,7 @@ function Suggestions({ userName, avatarURL }) {
   useEffect(() => {
   
 
-    fetch(`http://localhost:3005/user`)
+    fetch(`https://instagram-backend-dipu1-app.herokuapp.com/user`)
       .then((res) => res.json())
       .then((data) => {
         setUser(data);
@@ -82,7 +82,7 @@ function Suggestions({ userName, avatarURL }) {
               style={{ width: "4rem", height: "9vh" }}
               className="unfollow_avatar"
               alt="Remy Sharp"
-              src={img}
+              src={el.profile_picture}
             />
             <p className="modalPara">
               If you change your mind, you'll have to request to follow {     }
