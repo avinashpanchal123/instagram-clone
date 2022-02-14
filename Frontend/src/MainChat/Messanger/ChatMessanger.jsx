@@ -11,6 +11,8 @@ var i=0
 let user = "vinay"
 
 const ENDPOINT = "https://instagram-chat-server.herokuapp.com"
+
+//const ENDPOINT = "http://localhost:4500"
 let socket
 
 export const Messanger =()=>{
