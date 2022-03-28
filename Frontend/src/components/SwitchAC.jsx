@@ -4,9 +4,9 @@ import "./styles/SwitchAC.css"
 import {Link} from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import { isError,isLoading,isLogin } from "../../features/login/actions"
+import { isError,isLoading,isLogin } from "../features/login/actions";
 
-function SwitchAC({userName,name,avatarURL}) {
+function SwitchAC() {
   const [user, setUser] = useState([]);
   const { isloading, login, iserror } = useSelector((state)=>({
     isloading: state.login.isloading,
